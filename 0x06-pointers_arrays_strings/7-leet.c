@@ -1,4 +1,4 @@
-#include "bootcamp.h"
+#include "main.h"
 /**
  * leet - translates string to 'leet' (= 1337) language
  * @s: input string to be translated
