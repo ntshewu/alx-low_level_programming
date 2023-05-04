@@ -1,55 +1,19 @@
-#include "main.h"
-
+#include "bootcamp.h"
 /**
- 
- * _strcat - concatenates two strings
-
- * @dest: input value
-
- * @src: input value
-
+ * _strcat - concatenates string from other string
+ * @dest: destination string
+ * @src: source string
  *
-
- * Return: void
-
+ * Return: destination string concatenated
  */
-
 char *_strcat(char *dest, char *src)
-
 {
-
-	int i;
-
-	int j;
-
-
-	i = 0;
+	int i = 0, j;
 
 	while (dest[i] != '\0')
-
-	{
-
-	i++;
-
-	}
-
-	j = 0;
-
-	while (src[j] != '\0')
-
-	{
-
-		dest[i] = src[j];
-
 		i++;
-
-		j++;
-
-	}
-
-
+	for (j = 0; src[j] != '\0'; j++, i++)
+		dest[i] = src[j];
 	dest[i] = '\0';
-
 	return (dest);
-
 }
