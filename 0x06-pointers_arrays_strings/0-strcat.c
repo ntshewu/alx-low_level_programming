@@ -1,4 +1,4 @@
-#include "bootcamp.h"
+#include "main.h"
 /**
  * _strcat - concatenates string from other string
  * @dest: destination string
