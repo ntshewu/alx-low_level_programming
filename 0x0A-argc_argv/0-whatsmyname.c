@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main: print program name
+ *  main - prints name and new line.
  * @argc: command line arg.
  * @argv: command line arg.
  * Return: 0 - success.
