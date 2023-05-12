@@ -5,8 +5,8 @@
  * main - prints the minimum number of coins to make change
  * for an amount of money
  * @argc: number of arg.
- * @argv: array of number of arg
- * Return:0 
+ * @argv: array of number of arg.
+ * Return: 0 - success.
  */
 int main(int argc, char *argv[])
 {
