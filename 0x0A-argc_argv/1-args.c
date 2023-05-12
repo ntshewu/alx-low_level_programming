@@ -1,4 +1,4 @@
-#include <main.h>
+ #include <stdio.h>
 /**
  * main - print number and new line
  * @argc: command line arg
