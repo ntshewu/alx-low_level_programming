@@ -6,40 +6,38 @@
  * @width: Width of array 
  * @height: Height of array
  *
- * Return: 0
+ * Return: pointer to 2 dimentional  array
  */
 int **alloc_grid(int width, int height)
 {
-	int **twoD;
-	int hgt_index, wid_index;
+	int **gridout;
+	int i, j;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	twoD = malloc(sizeof(int *) * height);
-
-	if (twoD == NULL)
-		return (NULL);
-
-	for (hgt_index = 0; hgt_index < height; hgt_index++)
+	gridout = malloc(height * sizeof(int *));
+	if (gridout == NULL)
 	{
-		twoD[hgt_index] = malloc(sizeof(int) * width);
+		free(gridout);
+		return (NULL);
+	}
 
-		if (twoD[hgt_index] == NULL)
+	for (i = 0; i < height; i++)
+	{
+		gridout[i] = malloc(width * sizeof(int));
+		if (gridout[i] == NULL)
 		{
-			for (; hgt_index >= 0; hgt_index--)
-				free(twoD[hgt_index]);
-
-			free(twoD);
+			for (i--; i >= 0; i--)
+				free(gridout[i]);
+			free(gridout);
 			return (NULL);
 		}
 	}
 
-	for (hgt_index = 0; hgt_index < height; hgt_index++)
-	{
-		for (wid_index = 0; wid_index < width; wid_index++)
-			twoD[hgt_index][wid_index] = 0;
-	}
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
+			gridout[i][j] = 0;
 
-	return (twoD);
+	return (gridout);
 }
