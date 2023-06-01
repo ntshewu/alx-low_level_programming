@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 /**
- * add_node_end – add new node at end `list_t` list
+ * add_node_end - add new node at end of `list_t` list
  * @head: pointer to head
  * @str: string to duplicate
  * Return: Address of the new element, or NULL if failed

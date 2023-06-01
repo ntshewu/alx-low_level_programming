@@ -2,7 +2,7 @@
 
 /**
  * free_list - free a list_t list
- * @head: list to be freed
+ * @head: list to free
  */
 void free_list(list_t *head)
 {
