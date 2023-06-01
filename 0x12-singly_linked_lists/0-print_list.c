@@ -3,22 +3,23 @@
 
 /**
  * print_list - print all elements of singly list
- * @h: header
+ * @h: points to lists
  * Return: nodes printed
  */
 size_t print_list(const list_t *h)
+size_t print_list(const list_t *h)
 {
-	const list_t *current;
-	size_t c;
+	size_t s = 0;
 
-	c = 0;
-	current = h;
-	while (current != NULL)
+	while (h)
 	{
-		printf("[%d] %s\n", current->len, current->str);
-		current = current->next;
-		c++;
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
+		s++;
 	}
 
-	return (c);
+	return (s);
 }
