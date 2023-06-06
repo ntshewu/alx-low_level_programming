@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - frees a linked list with loop
- * @h: pointer to list's node 
+ * @h: pointer to list's node
  *
  * Return: the size of the list that was free’d
  */
