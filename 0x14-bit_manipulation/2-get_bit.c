@@ -5,7 +5,7 @@ include "main.h"
  * @n: number to get
  * @index: index
  *
- * Return: he value of the bit at index index or -1
+ * Return: value of the bit at index index or -1
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
