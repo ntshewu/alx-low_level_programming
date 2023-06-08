@@ -9,10 +9,12 @@ include "main.h"
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int bit;
+	int bit_val;
 
-	bit = ((n >> index) & 1);
-	if (index > 64)
+	if (index > 63)
 		return (-1);
-	return (bit);
+
+	bit_val = (n >> index) & 1;
+
+	return (bit_val);
 }
