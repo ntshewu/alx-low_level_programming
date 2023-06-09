@@ -1,10 +1,9 @@
-include "main.h"
+#include "main.h"
 
 /**
  * get_bit - returns value of a bit at given index
- * @n: number to get
- * @index: index
- *
+ * @n: number to compare
+ * @index: index to compare
  * Return: value of the bit at index index or -1
  */
 int get_bit(unsigned long int n, unsigned int index)
