@@ -1,47 +1,28 @@
 #include "hash_tables.h"
-
 /**
- * hash_table_set - Hash table function
- * @ht: pointer to start of table
- * @key: key value of element
- * @value: value of key element
+ * hash_table_get - function to retrieve value associeted with key
+ * @ht: pointer to hash table
+ * @key: key to retrive value
  *
- * Description: add an element to the hash table
- * Return: 1 for success or 0 otherwise
+ * Return: value or NULL if key does not exit.
  */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
-{
-	hash_node_t *ptr = NULL, *node = NULL;
-	unsigned long int index;
 
-	if (!ht || !key || !*key || !value)
-		return (0);
+char *hash_table_get(const hash_table_t *ht, const char *key)
+{
+	unsigned long int index = 0;
+	hash_node_t  *bucket;
+
+	if (!ht || !key || !*key)
+		return (NULL);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	ptr = ht->array[index];
+	bucket = ht->array[index];
 
-	while (ptr)
+	while (bucket)
 	{
-		if (strcmp(ptr->key, key) == 0)
-		{
-			free(ptr->value);
-			ptr->value = strdup(value);
-			return (1);
-		}
-		ptr = ptr->next;
+		if (!strcmp(key, bucket->key))
+			return (bucket->value);
+		bucket = bucket->next;
 	}
-
-
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
-	{
-		free(node);
-		return (0);
-	}
-
-	node->key = strdup(key);
-	node->value = strdup(value);
-	node->next = ht->array[index];
-	ht->array[index] = node;
-	return (1);
+	return (NULL);
 }
